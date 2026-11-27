@@ -7,16 +7,16 @@ import org.junit.jupiter.api.Test;
 
 class MoviegoerTest {
 
-    @Test void keepsNameAndEmail() {
-        Moviegoer alice = new Moviegoer("Alice", "alice@example.com");
-        assertThat(alice.name()).isEqualTo("Alice");
-        assertThat(alice.email()).isEqualTo("alice@example.com");
-    }
+  @Test void keepsNameAndEmail() {
+    Moviegoer alice = new Moviegoer("Alice", "alice@example.com");
+    assertThat(alice.name()).isEqualTo("Alice");
+    assertThat(alice.email()).isEqualTo("alice@example.com");
+  }
 
-    @Test void rejectsAnEmailWithoutAtSign() {
-        assertThatThrownBy(() -> new Moviegoer("Bob", "bob.example.com"))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("@");
-    }
+  @Test void rejectsAnEmailWithoutAtSign() {
+    assertThatThrownBy(() -> new Moviegoer("Bob", "bob.example.com"))
+        .isInstanceOf(IllegalArgumentException.class)
+        .hasMessageContaining("@");
+  }
 
 }
